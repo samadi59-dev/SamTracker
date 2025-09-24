@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body >
+    <header class="head">
+        <div class="container">
+            <div class="logos">
+                <h1 class="logo">SamTracker</h1>
+                <i id="mode-toggle" class="bx bxs-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="forms container">
+        <div class="card">
+            <h2>Tracker - Add a record</h2>
+            <form id="trackerForm">
+                <label for="description">Description</label>
+                <input type="text" id="description" placeholder="e.g. Lunch at cafe" required />
+
+                <div class="row" style="margin-top: 8px">
+                    <div class="col">
+                        <label for="amount">Amount</label>
+                        <input id="amount" type="number" step="0.01" placeholder="0.00" required />
+                    </div>
+                    <div class="col">
+                        <label for="date">Date</label>
+                        <input id="date" type="date" required />
+                    </div>
+                </div>
+
+                <label>Type</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="type" value="expense" checked />
+                        Expense</label>
+                    <label><input type="radio" name="type" value="income" /> Income</label>
+                </div>
+
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="food">Food</option>
+                    <option value="transport">Transport</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="salary">Salary</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div style="margin-top: 14px">
+                    <button id="submit" type="submit">add</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- dashboard value section -->
+
+    <section class="value-sec container">
+        <h1>Dashaboard</h1>
+        <div class="all-vlue">
+            <div class="value">
+                <h2>total balance</h2>
+                <span id="total-balance">$0.00</span>
+            </div>
+            <div class="value">
+                <h2>total income</h2>
+                <span id="total-income">$0.00</span>
+            </div>
+            <div class="value">
+                <h2>total expenses</h2>
+                <span id="total-expenses">$0.00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- transection history -->
+
+    <section class="trans-sec container">
+        <div class="trans-nav">
+            <h2>transection history</h2>
+            <div class="trans-inpu">
+                <input type="search" placeholder="search transections..." />
+                <select name="option" id="options-tran">
+                    <option value="new">date(new)</option>
+                    <option value="new">date(oldest)</option>
+                    <option value="new">amount(high)</option>
+                    <option value="new">amount(low)</option>
+                </select>
+            </div>
+        </div>
+        <button id="buton-add">+</button>
+    </section>
+
+    <section class="trnas-dis container">
+        <div class="tran-li">
+            <div class="transec-list">
+                <span class="list-span">transection</span>
+                <span class="list-span">date</span>
+                <span class="list-span">amount</span>
+                <span class="list-span">actions</span>
+            </div>
+
+            <div id="no-view">
+                <span class="con">🛄</span>
+                <h3>no transection</h3>
+                <h4>Get started by adding a new transaction.</h4>
+            </div>
+            <div id="list-cont"></div>
+        </div>
+    </section>
+
+    <!-- Delete Popup -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3>Are you sure you want to delete?</h3>
+            <div class="modal-actions">
+                <button id="confirmDelete">Yes, Delete</button>
+                <button id="cancelDelete">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!-- clear popup  -->
+    <div id="clear-modal" class="modal">
+        <div class="modal-content">
+            <h3>Are you sure you want to clear all data?</h3>
+            <div class="modal-actions">
+                <button style="background-color: brown;color: white;" id="confirmClear">Yes, clear</button>
+                <button id="cancelClear">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Popup -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Transaction</h3>
+            <form id="editForm">
+                <label>Description</label>
+                <input type="text" id="editDescription" required />
+
+                <label>Amount</label>
+                <input type="number" step="0.01" id="editAmount" required />
+
+                <label>Date</label>
+                <input type="date" id="editDate" required />
+
+                <label>Type</label>
+                <select id="editType">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+                <label>Category</label>
+                <select id="editCategory">
+                    <option value="food">Food</option>
+                    <option value="transport">Transport</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="salary">Salary</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div class="modal-actions">
+                    <button type="submit">Save Changes</button>
+                    <button type="button" id="cancelEdit">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer >
+        <button id="clear-btn">clear all data</button>
+    </footer>
+    
+    
+    <script src="track.js"></script>
+</body>
+
+</html>

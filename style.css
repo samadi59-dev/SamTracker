@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(208, 210, 212);
+    color: rgb(24, 25, 26);
+    width: 100%;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+}
+
+body.dark-mode .container {
+    /* background: #2a2a2a; */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.head {
+    background-color: darkslategrey;
+    color: rgb(252, 250, 250);
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+
+}
+
+.head i {
+    font-size: 22px;
+    border-radius: 30%;
+    background-color: white;
+    color: rgb(49, 49, 49);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.head i:hover .value-sec {
+    margin: 15px auto;
+
+}
+
+.all-vlue {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.value-sec h1 {
+    padding: 10px 0;
+}
+
+.value {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border: none;
+    width: 100%;
+    text-transform: capitalize;
+
+}
+
+.value h2 {
+    font-size: 15px;
+    padding: 0 0 7px;
+
+}
+
+.value span {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.value #total-income {
+    color: rgb(19, 167, 19);
+}
+
+.value #total-expenses {
+    color: rgba(231, 30, 30, 0.858);
+}
+
+.value #total-balance {
+    color: rgb(0, 112, 224);
+}
+
+.analytic-sec {
+    margin: 20px auto;
+    text-transform: capitalize;
+    display: none;
+
+}
+
+.analytic-sec h1 {
+    padding: 0px 0 15px;
+}
+
+.anal-data {
+    display: flex;
+    gap: 15px;
+}
+
+.categories-dis {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    height: 320px;
+    border: none;
+    border-radius: 10px;
+}
+
+.data-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+
+}
+
+.categories-dis h3 {
+    font-size: 16px;
+    padding: 15px;
+}
+
+.data-display span {
+    font-size: 30px;
+}
+
+.data-display h3 {
+    font-size: 13px;
+    color: dimgrey;
+}
+
+.trans-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px auto;
+    text-transform: capitalize;
+}
+
+.trans-inpu input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 16rem;
+}
+
+.trans-inpu select {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+#buton-add {
+    position: fixed;
+    background-color: rgb(12, 151, 12);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 50px;
+    right: 50px;
+    font-size: 30px;
+    border: none;
+}
+
+.tran-li {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.transec-list {
+    background-color: rgb(230, 230, 227);
+    display: flex;
+    height: 50px;
+    min-width: 600px;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+
+
+}
+
+.list-span {
+    padding: 12px 24px;
+    width: 100%;
+    text-transform: uppercase;
+    color: rgb(35, 35, 35);
+    font-size: 16px;
+
+}
+
+#no-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    color: rgb(81, 81, 81);
+    text-transform: capitalize;
+
+}
+
+#no-view h3 {
+    margin: 7px 0;
+    font-size: 15px;
+
+}
+
+#no-view h4 {
+    font-size: 12px;
+}
+
+.tran-view {
+    display: flex;
+    height: 50px;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-top: 0.5px solid;
+}
+
+.tran-view .list-span {
+    text-transform: capitalize;
+}
+
+.list-span.serv {
+    font-weight: bold;
+}
+
+.list-span small {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.list-span button {
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 10px;
+
+}
+
+.card {
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    margin: 10% 0 15px;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+select {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+label {
+    margin: 10px 0;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: darkgreen;
+    font-size: 20px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
+
+/* Body Dark Mode */
+body.dark-mode {
+    /* background-color: #121212;
+    color: #f1f1f1; */
+}
+
+body.dark-mode .container {
+    /* background-color: #1e1e1e; */
+}
+
+body.dark-mode .list-span,
+body.dark-mode button .bx,
+body.dark-mode {
+    color: white;
+    transition: color 0.3s ease-in-out;
+
+}
+
+body.dark-mode .card,
+body.dark-mode .value,
+body.dark-mode .tran-li,
+body.dark-mode .transec-list,
+body.dark-mode .modal-content {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode {
+    background-color: #333;
+    color: #f1f1f1;
+    border: 1px solid #555;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+body.dark-mode .tran-view {
+    border-top: 0.5px solid #555;
+}
+
+body.dark-mode #no-view {
+    color: #aaa;
+}
+
+/* Icon Colors */
+body.dark-mode .head i {
+    background-color: #f1f1f1;
+    color: #222;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+}
+
+
+
+
+/* Popup Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+#editForm label {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#confirmDelete {
+    background: crimson;
+    color: white;
+}
+
+#cancelDelete,
+#cancelEdit {
+    background: gray;
+    color: white;
+}
+
+#editForm button[type="submit"] {
+    background: darkgreen;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4% 0;
+}
+
+#clear-btn {
+    background: none;
+    border: none;
+    color: rgb(166, 34, 10);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#clear-btn:hover {
+    color: rgb(200, 42, 14);
+    text-decoration: underline;
+}
+
+
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .all-vlue {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .all-vlue,
+    .anal-data {
+        flex-wrap: wrap;
+    }
+
+    .anal-data {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .trans-nav {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trans-nav input {
+        margin: 10px 0;
+    }
+
+    .tran-li {
+        overflow-x: auto;
+    }
+
+    #list-cont {
+        overflow-x: auto;
+        min-width: 600px;
+    }
+
+    .card {
+        margin-top: 20%;
+    }
+}
