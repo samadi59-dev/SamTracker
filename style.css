@@ -18,9 +18,6 @@ body.dark-mode {
 
 }
 
-body.dark-mode .container {
-    /* background: #2a2a2a; */
-}
 
 .container {
     max-width: 1200px;
@@ -62,6 +59,20 @@ body.dark-mode .container {
 .head i:hover .value-sec {
     margin: 15px auto;
 
+}
+
+.value-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pp-btn {
+    background-color: darkgreen;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
 }
 
 .all-vlue {
@@ -177,18 +188,17 @@ body.dark-mode .container {
     border: none;
 }
 
-#buton-add {
-    position: fixed;
-    background-color: rgb(12, 151, 12);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    bottom: 50px;
-    right: 50px;
-    font-size: 30px;
-    border: none;
+.no-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-block: 5%;
+    color: rgb(138, 136, 136);
+    font-size: 20px;
+    font-weight: 600;
 }
+
 
 .tran-li {
     background-color: rgb(255, 255, 255);
@@ -268,7 +278,6 @@ body.dark-mode .container {
 }
 
 .list-span button {
-    -webkit-appearance: none;
     border: none;
     background: none;
     background-color: transparent;
@@ -322,15 +331,6 @@ form button {
 
 }
 
-/* Body Dark Mode */
-body.dark-mode {
-    /* background-color: #121212;
-    color: #f1f1f1; */
-}
-
-body.dark-mode .container {
-    /* background-color: #1e1e1e; */
-}
 
 body.dark-mode .list-span,
 body.dark-mode button .bx,
@@ -340,10 +340,13 @@ body.dark-mode {
 
 }
 
+body.dark-mode .transec-list {
+    background-color: #222;
+}
+
 body.dark-mode .card,
 body.dark-mode .value,
 body.dark-mode .tran-li,
-body.dark-mode .transec-list,
 body.dark-mode .modal-content {
     background-color: #2a2a2a;
     color: #f1f1f1;
@@ -375,8 +378,6 @@ body.dark-mode .head i {
     transition: background-color 0.3s ease-out, color 0.3s ease-out;
 
 }
-
-
 
 
 /* Popup Modal */
@@ -421,7 +422,15 @@ body.dark-mode .head i {
     cursor: pointer;
 }
 
-#confirmDelete {
+.con-btn:hover {
+    background-color: rgb(200, 22, 82);
+}
+
+.can-btn:hover {
+    background-color: #8a8888;
+}
+
+.con-btn {
     background: crimson;
     color: white;
 }
@@ -501,5 +510,12 @@ footer {
 
     .card {
         margin-top: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .value-head {
+        flex-direction: column;
+        margin-block: 10px;
     }
 }

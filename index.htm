@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body >
+<body>
     <header class="head">
         <div class="container">
             <div class="logos">
@@ -64,7 +64,14 @@
     <!-- dashboard value section -->
 
     <section class="value-sec container">
-        <h1>Dashaboard</h1>
+        <div class="value-head">
+            <h1>Dashaboard</h1>
+            <div class="controls">
+                <button class="pp-btn" id="printBtn">🖨 Print</button>
+                <button class="pp-btn" id="pdfBtn">⬇ Download PDF</button>
+            </div>
+        </div>
+
         <div class="all-vlue">
             <div class="value">
                 <h2>total balance</h2>
@@ -89,14 +96,13 @@
             <div class="trans-inpu">
                 <input type="search" placeholder="search transections..." />
                 <select name="option" id="options-tran">
-                    <option value="new">date(new)</option>
-                    <option value="new">date(oldest)</option>
-                    <option value="new">amount(high)</option>
-                    <option value="new">amount(low)</option>
+                    <option value="date_desc">Date (Newest First)</option>
+                    <option value="amount_desc">Amount (High → Low)</option>
+                    <option value="amount_asc">Amount (Low → High)</option>
+                    <option value="date_asc">Date (Oldest First)</option>
                 </select>
             </div>
         </div>
-        <button id="buton-add">+</button>
     </section>
 
     <section class="trnas-dis container">
@@ -122,8 +128,8 @@
         <div class="modal-content">
             <h3>Are you sure you want to delete?</h3>
             <div class="modal-actions">
-                <button id="confirmDelete">Yes, Delete</button>
-                <button id="cancelDelete">Cancel</button>
+                <button class="con-btn" id="confirmDelete">Yes, Delete</button>
+                <button class="can-btn" id="cancelDelete">Cancel</button>
             </div>
         </div>
     </div>
@@ -132,8 +138,8 @@
         <div class="modal-content">
             <h3>Are you sure you want to clear all data?</h3>
             <div class="modal-actions">
-                <button style="background-color: brown;color: white;" id="confirmClear">Yes, clear</button>
-                <button id="cancelClear">Cancel</button>
+                <button class="con-btn" id="confirmClear">Yes, clear</button>
+                <button class="can-btn" id="cancelClear">Cancel</button>
             </div>
         </div>
     </div>
@@ -175,11 +181,14 @@
             </form>
         </div>
     </div>
-    <footer >
+    <footer>
         <button id="clear-btn">clear all data</button>
     </footer>
-    
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+
     <script src="track.js"></script>
 </body>
 
