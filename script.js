@@ -31,6 +31,11 @@ const editModal = document.getElementById("editModal");
 const editForm = document.getElementById("editForm");
 const cancelEditBtn = document.getElementById("cancelEdit");
 
+// - print and pdf 
+
+const printed = document.getElementById("printBtn")
+const pdfs =document.getElementById("pdfBtn")
+
 // - Edit Inputs
 const editDescription = document.getElementById("editDescription");
 const editAmount = document.getElementById("editAmount");
@@ -72,8 +77,9 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// --- PRINT
-document.getElementById("printBtn").addEventListener("click", () => {
+// --- PRINT and pdf functions
+
+function TransPrint() {
     const transactions = GetToLocal();
 
     if (transactions.length === 0) {
@@ -157,9 +163,9 @@ document.getElementById("printBtn").addEventListener("click", () => {
         </html>
     `);
     printWindow.document.close();
-});
+}
 
-document.getElementById("pdfBtn").addEventListener("click", () => {
+function transPdf() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
@@ -212,7 +218,9 @@ document.getElementById("pdfBtn").addEventListener("click", () => {
 
     // -------- Save --------
     doc.save("transactions_report.pdf");
-});
+}
+
+
 
 // LocalStorage Functions
 function GetToLocal() {
@@ -480,6 +488,11 @@ trackerForm.addEventListener("submit", function (e) {
 
     trackerForm.reset();
 });
+
+// pdf and print event 
+
+printed.addEventListener("click",TransPrint)
+pdfs.addEventListener("click",transPdf)
 
 // search and sort event
 
